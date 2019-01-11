@@ -1,0 +1,308 @@
+<html>
+
+<head>
+    <title>Streamer</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="Assets/Styles/material.min.css">
+    <script src="Assets/Scripts/material.min.js"></script>
+    <link rel="stylesheet" href="Assets/Styles/main.css">
+    <script type="text/javascript" src="Assets/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="Assets/Scripts/qrcode.js"></script>
+</head>
+
+<body background='Assets/Images/centreG.jpg' style='overflow: hidden;' onload="AskForSettings()">
+
+
+
+
+    <!-- Simple header with fixed tabs. -->
+    <div style="top:0px;position: fixed" class="mdl-layout mdl-js-layout mdl-layout--fixed-header
+                mdl-layout--fixed-tabs">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">Streamer</span>
+            </div>
+            <!-- Tabs -->
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Main</a>
+                <a href="#fixed-tab-2" class="mdl-layout__tab">Configuration</a>
+                <a href="#fixed-tab-3" class="mdl-layout__tab">About </a>
+            </div>
+        </header>
+
+        <main class="mdl-layout__content">
+            <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+                <div class="page-content">
+                    <!-- Your content goes here -->
+
+
+                    <div class=" mdl-card mdl-shadow--2dp" style="width:97%;margin-left: 10px;">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Server</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            Turn Server On or Off from here
+                        </div>
+                        <label style="margin:30px" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="serverSwitch">
+                            <input type="checkbox" id="serverSwitch" class="mdl-switch__input" onclick="RunServer()">
+                            <span class="mdl-switch__label"></span>
+                        </label>
+
+                        <div class="mdl-spinner mdl-js-spinner is-active" id='serverStatus' hidden style="position:relative;top:-55px;left:120px"></div>
+                        <!-- MDL Spinner Component with Single Color -->
+
+                        <div id="qrcode" style="width:200px;height: 200px;position: absolute;top:20px;right: 60px;">
+                        </div>
+                        <label id="guideLabel" class='mdl-card__supporting-text' style="position:absolute;left:20px;top:210px;"></label>
+                        <br><br>
+                    </div>
+
+
+                </div>
+            </section>
+            <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+                <div class="page-content">
+                    <!-- Your content goes here -->
+
+                    <div class=" mdl-card mdl-shadow--2dp" style="width:97%;margin-left: 10px;">
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Configuration</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            Modify the configuration settings here
+                        </div>
+
+                        <label style="color:black;left:30px;position: relative;top:10;">Path of Broadcasting
+                            directory</label>
+
+
+                        <div class="mdl-textfield mdl-js-textfield" style="margin-left: 10px;color:deeppink;left: 20px;">
+                            <input class="mdl-textfield__input" type="text" id="textPath" value='E:\videos\' style="border-bottom:1px solid deeppink;color: deeppink" disabled>
+                            <label class="mdl-textfield__label" for="textPath" style="color: blue">E:\videos\</label>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="AskForFolderDialogBox()"
+                            style="position:relative;left:320px;top:-30px;background-color:dodgerblue;background-color:chartreuse">Browse</button>
+                        </div>
+
+                        <label style="color:black;left:30px;position: relative;">Port Number (0-9999)</label>
+
+                        <div class="mdl-textfield mdl-js-textfield" style="margin-left: 30px;">
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*?" id="portField"
+                                value="5555" style="border-bottom:1px solid deeppink;color: deeppink">
+                            <label class="mdl-textfield__label" for="portField">Number...</label>
+                            <span class="mdl-textfield__error">Input is not a Port!</span>
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                                onclick="SendDataToMainThread()">
+                                Save Changes
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </section>
+            <section class="mdl-layout__tab-panel" id="fixed-tab-3">
+                <div class="page-content">
+
+                    <!-- Your content goes here -->
+                    <div class="demo-card-square mdl-card mdl-shadow--2dp" style="width:97%;margin-left: 10px;">
+                        <div class="mdl-card__title mdl-card--expand">
+                            <h2 class="mdl-card__title-text">Developer Info</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            Name:
+                            <label style="color:mediumseagreen">Shivendra Pratap Singh</label><br>
+                            Contact Email:-<a href="mailto:shivendrapsingh014@gmail.com">shivendrapsingh014@gmail.com</a><br>
+                            Twitter Username:@sps014
+                            <br>
+                            GitHub Username:@sps014
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                Ckeck For Updates
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+    <br>
+
+    <div id='footer'>
+       <b><p id='alertText' style='color: yellow'>Console Output</p></b>
+    </div>
+
+
+    <script>
+
+        var qrcode = new QRCode(document.getElementById("qrcode"),
+            {
+                width: 200,
+                height: 200
+            });
+
+        var stateSwitch = document.getElementById('serverSwitch');
+        var serverStatus = document.getElementById('serverStatus');
+        var qrBox = document.getElementById('qrcode');
+        var guideLabel = document.getElementById('guideLabel');
+        var alertText=document.getElementById('alertText');
+        var footer=document.getElementById('footer');
+        var portField=document.getElementById('portField');
+        var textPath=document.getElementById('textPath');
+
+        const { ipcRenderer } = require('electron');
+        ipcRenderer.on('IpAddressTracesEvent', IpAddressHandler);
+        ipcRenderer.on('FolderDoNotExistEvent',FolderNotExist);
+        ipcRenderer.on('PortDoNotExistEvent',PortNotExist);
+        ipcRenderer.on('SettingsVerifiedCorrectlyEvent',SettingsSavedCorrectly);
+        ipcRenderer.on('ObtainedDirectoryPathEvent',ObtainedFolderResult);
+        ipcRenderer.on('ServerStartingStatusEvent',ServerStartStaus);
+        ipcRenderer.on('NowTakeSettingsBackEvent',LoadSettings);
+        ipcRenderer.on('ServerStoppedStatusEvent',StoppedServer);
+        ipcRenderer.on('SendIpRequestEvent',IpRequestGot);
+
+        function IpRequestGot(event,ip)
+        {
+            footer.style.backgroundColor='rgb(4, 62, 128)';
+            alertText.style.color='yellow';
+            if(ip.indexOf("::ffff:")==0)
+            {
+                ip=ip.replace('::ffff:',"");
+                alertText.innerHTML="Last Request from "+ip;
+            }
+            else
+            {
+                alertText.innerHTML="Last Request from "+ip;
+            }
+
+        }
+
+        function LoadSettings(event,args)
+        {
+            var config=JSON.parse(args);
+            var port=config.Port;
+            var dir=config.TargetDirectoryPath;
+            portField.value=parseInt(port);
+            textPath.value=dir;
+        }
+
+        function AskForSettings()
+        {
+            ipcRenderer.send('GiveMeSettingsEvent',null);
+        }
+
+        function StoppedServer(event,args)
+        {
+            footer.style.backgroundColor='rgb(4, 62, 128)';
+            alertText.style.color='yellow';
+            alertText.innerHTML="Server Stopped Successfully "; 
+        }
+
+        function ServerStartStaus(event,args)
+        {
+            if(args==true)
+            {
+                footer.style.backgroundColor='green';
+                alertText.style.color='yellow';
+                alertText.innerHTML="Server Started Successfully on port :"+portField.value; 
+            }
+            if(args==false)
+            {
+                footer.style.backgroundColor='red';
+                alertText.style.color='white';
+                alertText.innerHTML="Error :- Can't Start Server Please Check Port and Folder URL"; 
+            }
+        }
+        function ObtainedFolderResult(event,arg)
+        {
+            textPath.value=arg;
+            
+        }
+        function AskForFolderDialogBox()
+        {
+            ipcRenderer.send('ShowFolderDialogEvent',true);
+        }
+
+        function SettingsSavedCorrectly(event,args)
+        {
+            footer.style.backgroundColor='rgb(4, 62, 128)';
+            alertText.style.color='yellow';
+            alertText.innerHTML="Saved Settings Successfully :)"; 
+        }
+        function FolderNotExist(event,arg)
+        {
+            footer.style.backgroundColor='red';
+            alertText.style.color='white';
+            alertText.innerHTML="Error :- Directory "+arg+"  does not exist kindly change the folder"; 
+        }
+
+        function PortNotExist(event,arg)
+        {
+            footer.style.backgroundColor='red';
+            alertText.style.color='white';
+            alertText.innerHTML="Error :- Port "+arg+"  is not valid  kindly change the port.."; 
+        }
+        //Ask for IP to show
+        function IpAddressHandler(event, arg) {
+            var dname = (arg + ":" + PortValue);
+
+            if (arg == undefined) {
+                guideLabel.innerHTML = "No device connected to wifi port , connect one and restart the server.";
+                return;
+            }
+            else {
+                var PortValue = parseInt(document.getElementById('portField').value);
+                var dname = ("http://" + arg + ":" + PortValue);
+                guideLabel.innerHTML = "Ask your friends to scan qr code or type <a style='color:blue;'><b>" + dname + "</b></a> in any browser.";
+                GenerateQRCode(dname);
+            }
+
+        }
+        //Generates QR Codes
+        function GenerateQRCode(data) 
+        {
+            qrcode.clear();
+            qrcode.makeCode(data);
+        }
+        //Handles Running of server
+        function RunServer() {
+
+            if (stateSwitch.checked) {
+                serverStatus.hidden = false;
+                qrBox.hidden = false;
+                guideLabel.hidden = false;
+            }
+            else {
+                serverStatus.hidden = true;
+                qrBox.hidden = true;
+                guideLabel.hidden = true;
+            }
+            ipcRenderer.send('RunHttpServerEvent', stateSwitch.checked);
+        }
+
+        function SendDataToMainThread() {
+
+            var textValue = textPath.value;
+            var PortValue = parseInt(portField.value, 10);
+
+            if (PortValue > 9999) {
+                alert('Port Value out of range not saving for now :(');
+                return;
+            }
+            ipcRenderer.send('SaveConfigurationSettingsEvents', textValue + "!@#$%" + PortValue);
+
+
+        }
+
+    </script>
+</body>
+
+</html>

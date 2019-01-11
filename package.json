@@ -1,0 +1,21 @@
+{
+  "name": "streamer",
+  "version": "1.0.0",
+  "description": "Local data streaming solution",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . streamer --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds  --version-string.ProductName=\"Streamer\"",
+    "package-linux": "electron-packager . streamer --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
+  },
+  "author": "shivendrapsingh014@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^3.0.12",
+    "electron-packager": "^13.0.1",
+    "electron-reload": "^1.4.0",
+    "jsmediatags": "^3.8.1"
+  }
+}
