@@ -3,6 +3,9 @@ A application build with electron.js that can broadcast local multimedia content
 Supported platforms Windows,Mac,Linux.
 Future Plans for Android And ios.
 
+##  Binaries Download
+[Windows](https://github.com/sps014/Streamer-Desktop/releases/download/0.1/streamer-win32-ia32.zip)
+
 ## steps to use properly
 
 1. Start Application and Configure properties
