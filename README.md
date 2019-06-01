@@ -13,6 +13,6 @@ Future Plans for Android And ios.
 
 ![strmr2](https://user-images.githubusercontent.com/45932883/58746109-0ec14580-8478-11e9-9f94-612ca040a304.PNG)
 
-3. Select audio or video file to play and enjoy streaming
+3. Select audio or video file to play from list in remote browser and enjoy streaming
 
 ![strm4](https://user-images.githubusercontent.com/45932883/58746136-534ce100-8478-11e9-982e-826244f7e871.PNG)
