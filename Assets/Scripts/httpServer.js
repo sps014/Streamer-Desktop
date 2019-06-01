@@ -18,7 +18,7 @@ class HttpServer
     _RequestProcessing(req,res)
     {
         var url=req.url.toString();
-        //console.log(colors.fg.Yellow,req.connection.remoteAddress,colors.fg.Magenta,"       requesting for    "+url,colors.Reset);
+        console.log(colors.fg.Yellow,req.connection.remoteAddress,colors.fg.Magenta,"       requesting for    "+url,colors.Reset);
         global.IpPrinter.Print(req.connection.remoteAddress);
 
         if(url=='/')

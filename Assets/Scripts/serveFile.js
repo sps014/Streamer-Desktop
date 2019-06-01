@@ -11,19 +11,24 @@ class ServeFile {
         if (readFile)
             var data = fs.readFileSync(url);
 
-        if (type == 'css') {
+        if (type == 'css') 
+        {
             res.writeHeader(200, { "content-type": "text/css" })
         }
-        else if (type == 'js') {
+        else if (type == 'js')
+         {
             res.writeHeader(200, { "content-type": "text/javascript" })
         }
-        else if (type == 'png') {
+        else if (type == 'png') 
+        {
             res.writeHeader(200, { "content-type": "image/png" })
         }
-        else if (type == 'jpg') {
+        else if (type == 'jpg') 
+        {
             res.writeHeader(200, { "content-type": "image/jpg" })
         }
-        else if (type == "mp3thumb") {
+        else if (type == "mp3thumb")
+        {
             const jsmediatags = require('jsmediatags');
             url = decodeURI(url);
             url = url.replace("thumb", "");

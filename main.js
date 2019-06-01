@@ -50,6 +50,7 @@ app.on('closed', closedWindow);
 app.on('ready', createWindow);
 app.on('window-all-closed', closeApp);
 
+
 ipcMain.on('RunHttpServerEvent', RunServer);
 ipcMain.on('SaveConfigurationSettingsEvents', SaveSettings);
 ipcMain.on('ShowFolderDialogEvent', ShowFolderDialog);
