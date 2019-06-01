@@ -6,7 +6,7 @@ Future Plans for Android And ios.
 ##  Binaries Download
 [Windows](https://github.com/sps014/Streamer-Desktop/releases/download/0.1/streamer-win32-ia32.zip)
 
-## steps to use properly
+## steps
 
 1. Start Application and Configure properties
 
