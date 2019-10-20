@@ -1,7 +1,7 @@
 # Streamer-Desktop
 A application build with electron.js that can broadcast local multimedia content to other nearby devices directly with wifi. 
 Supported platforms Windows,Mac,Linux.
-Future Plans for Android And ios.
+Future Plans for Android And ios. :)
 
 ##  Binaries Download
 [Windows](https://github.com/sps014/Streamer-Desktop/releases/download/0.1/streamer-win32-ia32.zip)
