@@ -13,7 +13,7 @@
   "author": "shivendrapsingh014@gmail.com",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^9.4.0",
+    "electron": "^15.5.5",
     "electron-packager": "^13.0.1",
     "electron-reload": "^1.4.0",
     "jsmediatags": "^3.8.1"
